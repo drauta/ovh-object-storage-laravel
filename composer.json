@@ -1,6 +1,8 @@
 {
     "name": "drauta/runabove-laravel",
-    "description": "",
+    "description": "Integration with RunAbove object container",
+	"keywords": ["runabove", "laravel"],
+	"license": "MIT",
     "authors": [
         {
             "name": "Oscar",
