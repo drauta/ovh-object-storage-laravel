@@ -2,7 +2,7 @@
 
 use Storage;
 use Illuminate\Support\ServiceProvider;
-use Drauta\RunaboveClient
+use Drauta\RunaboveClient;
 
 class RunaboveServiceProvider extends ServiceProvider {
 
