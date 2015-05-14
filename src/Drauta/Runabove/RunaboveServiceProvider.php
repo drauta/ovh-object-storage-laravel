@@ -2,7 +2,7 @@
 
 use Storage;
 use Illuminate\Support\ServiceProvider;
-use Drauta\RunaboveClient;
+//use Drauta\RunaboveClient;
 
 class RunaboveServiceProvider extends ServiceProvider {
 
@@ -11,7 +11,7 @@ class RunaboveServiceProvider extends ServiceProvider {
   {
         Storage::extend('runabove', function($app, $config)
         {
-            $client = new RunAboveClient($config);   
+            $client = new RunaboveClient($config);   
             return $client;
         });
     }
