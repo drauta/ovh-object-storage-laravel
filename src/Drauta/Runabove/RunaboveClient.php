@@ -13,7 +13,7 @@ class RunaboveClient{
 	private $service;
 	private $container;
 	public function __construct($client){		
-		$this->client = new OpenStack($url, array(
+		$this->client = new OpenStack($this->url, array(
 		  'username' => $client['username'],
 		  'password' => $client['password'],	  
 		  'tenantId' => $client['tenantId'],
@@ -23,9 +23,9 @@ class RunaboveClient{
 		$this->container = $this->service->getContainer($client['container']);
 	}
 
-	public function fileGet()
+	public function fileGet($filename)
 	{		
-		$object = $this->container->getObject($this->file_id);
+		$object = $this->container->getObject($filename);
 		return $object->getUrl();
 	}
 
