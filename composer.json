@@ -1,10 +1,10 @@
 {
-    "name": "drauta/runabove",
+    "name": "drauta/runabove-laravel",
     "description": "",
     "authors": [
         {
-            "name": "hoosk",
-            "email": "odelgado@about.me"
+            "name": "Oscar",
+            "email": "od@drauta.com"
         }
     ],
     "require": {
