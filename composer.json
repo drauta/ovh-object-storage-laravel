@@ -1,0 +1,21 @@
+{
+    "name": "drauta/runabove",
+    "description": "",
+    "authors": [
+        {
+            "name": "hoosk",
+            "email": "odelgado@about.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.*",
+        "rackspace/php-opencloud": "~1.14"
+    },
+    "autoload": {
+        "psr-0": {
+            "Drauta\\Runabove": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
