@@ -4,7 +4,7 @@ Installation
 Install using composer:
 
 ```bash
-composer require drauta/runabove
+composer require drauta/runabove "dev-master"
 ```
 
 add to config/app.php
