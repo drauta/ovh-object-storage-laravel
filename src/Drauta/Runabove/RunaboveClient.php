@@ -1,6 +1,4 @@
-<?php
-
-namespace Drauta\Runabove;
+<?php namespace Drauta\Runabove;
 
 /*Dependencias*/
 use OpenCloud\OpenStack;
