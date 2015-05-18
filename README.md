@@ -39,3 +39,8 @@ Get the file url from container:
 ```bash
 Storage::disk('runabove')->fileGet($filename);
 ```
+
+Return if a file exists (true or false)
+```bash
+Storage::disk('runabove')->fileExists($filename);
+```
