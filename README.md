@@ -30,9 +30,10 @@ This package provides an integration with RunAbove object container.
 Usage:
 
 Saves the form file: 
+$filename not mandatory
 
 ```bash
-Storage::disk('runabove')->filePut($request->file('file'));
+Storage::disk('runabove')->filePut($request->file('file'), $filename = null);
 ```
 Get the file url from container:
 
