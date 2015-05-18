@@ -27,8 +27,11 @@ class RunaboveClient{
 		return $object->getUrl();
 	}
 
-	public function filePut($file){		
-			$quees = $this->container->uploadObject($file->getClientOriginalName(), fopen($file->getRealPath(), 'r'));				
+	public function filePut($file, $filename = null){	
+		if($filename == null){
+			$filename = $file->getClientOriginalName();
+		}	
+		$quees = $this->container->uploadObject($filename, fopen($file->getRealPath(), 'r'));				
 	}
 	
 	public function fileExists($filename){	
