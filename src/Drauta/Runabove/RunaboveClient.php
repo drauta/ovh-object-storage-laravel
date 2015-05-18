@@ -31,13 +31,13 @@ class RunaboveClient{
 			$quees = $this->container->uploadObject($file->getClientOriginalName(), fopen($file->getRealPath(), 'r'));				
 	}
 	
-	/*
-	*	Return Bool (true if there is a file with the same filename)
-	*	TODO: todo
-	*/
-	public function fileExists($filename){
-		//TODO: todo
-		return false;
+	public function fileExists($filename){	
+		foreach($this->container->objectList() as $obj){
+			if($obj->getName() == $filename){
+				return true;
+			}
+		}
+		return false; 
 	}
 	/*Todo crear containers*/
 }
