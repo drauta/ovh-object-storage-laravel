@@ -42,5 +42,14 @@ class RunaboveClient{
 		}
 		return false; 
 	}
+	
+	public function fileList(){
+		return $this->container->objectList();
+	}
+	
+	public function fileDelete($filename){
+		$object = $this->container->getObject($filename);
+		return $object->delete();
+	}
 	/*Todo crear containers*/
 }
