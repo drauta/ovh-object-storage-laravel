@@ -26,12 +26,31 @@ class RunaboveClient{
 		$object = $this->container->getObject($filename);
 		return $object->getUrl();
 	}
-
+	/*
+		File puede ser un file de un formulario o un path a un archivo existente
+	*/
 	public function filePut($file, $filename = null){	
+		
+		$getPath = null;
+		$isString = is_string($file);
+		
+		if($isString){
+				$getPath = $file;
+				
+		}else{
+				$getPath = $file->getRealPath();		
+		}		
+		
 		if($filename == null){
-			$filename = $file->getClientOriginalName();
+			if($isString){
+				$explodePath = explode("/", $file);
+				$filename = $explodePath[count($explodePath)-1];
+			}else{
+				$filename = $file->getClientOriginalName();
+			}
 		}	
-		$quees = $this->container->uploadObject($filename, fopen($file->getRealPath(), 'r'));				
+		
+		$this->container->uploadObject($filename, fopen($getPath, 'r'));				
 	}
 	
 	public function fileExists($filename){	
