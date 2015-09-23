@@ -19,7 +19,8 @@ Add the following to the config/filesystem.php
 	'driver'   => 'runabove',
 	'username' => 'yourUsername',
 	'password' => 'yourPassword',	  
-	'tenantId' => 'yourTeenantId',		
+	'tenantId' => 'yourTeenantId',
+	'region'   => 'yourRegion',
 	'container'=> 'yourContainer',
 ],
 ```
