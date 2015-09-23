@@ -17,7 +17,7 @@ class RunaboveClient{
 		  'tenantId' => $client['tenantId'],
 		));
 		/*Esto no se toca de momento*/
-		$this->service = $this->client->objectStoreService('swift', 'SBG-1', 'publicURL');		
+		$this->service = $this->client->objectStoreService('swift', $client['region'], 'publicURL');		
 		$this->container = $this->service->getContainer($client['container']);
 	}
 
