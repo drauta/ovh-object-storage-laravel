@@ -4,7 +4,7 @@ Installation
 Install using composer:
 
 ```bash
-composer require drauta/runabove "dev-master"
+composer require drauta/ovh-object-storage-laravel "dev-master"
 ```
 
 add to config/app.php
@@ -15,7 +15,7 @@ add to config/app.php
 
 Add the following to the config/filesystem.php
 ```bash
-'runabove' => [
+'ovh' => [
 	'driver'   => 'runabove',
 	'username' => 'yourUsername',
 	'password' => 'yourPassword',	  
@@ -26,7 +26,7 @@ Add the following to the config/filesystem.php
 ```
 Laravel
 -------
-This package provides an integration with RunAbove object container. 
+This package provides an integration with OVH object container. 
 
 Usage:
 
@@ -34,15 +34,15 @@ Saves the form file:
 $filename not mandatory
 
 ```bash
-Storage::disk('runabove')->filePut($request->file('file'), $filename = null);
+Storage::disk('ovh')->filePut($request->file('file'), $filename = null);
 ```
 Get the file url from container:
 
 ```bash
-Storage::disk('runabove')->fileGet($filename);
+Storage::disk('ovh')->fileGet($filename);
 ```
 
 Return if a file exists (true or false)
 ```bash
-Storage::disk('runabove')->fileExists($filename);
+Storage::disk('ovh')->fileExists($filename);
 ```
