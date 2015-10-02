@@ -1,12 +1,12 @@
-<?php namespace Drauta\Runabove;
+<?php namespace Drauta\OvhObjectStorage;
 
 /*Dependencias*/
 use OpenCloud\OpenStack;
 use Guzzle\Http\Exception\BadResponseException;
 
 
-class RunaboveClient{
-	private $url = "https://auth.runabove.io/v2.0/";
+class OvhClient{
+	private $url = "https://auth.cloud.ovh.net/v2.0/";
 	private $client;
 	private $service;
 	private $container;
