@@ -1,6 +1,6 @@
 {
-    "name": "drauta/runabove-laravel",
-    "description": "Integration with RunAbove object container",
+    "name": "drauta/ovh-object-storage-laravel",
+    "description": "Integration with Ovh object container",
 	"keywords": ["runabove", "laravel"],
 	"license": "MIT",
     "authors": [
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Drauta\\Runabove": "src/"
+            "Drauta\\OvhObjectStorage": "src/"
         }
     },
     "minimum-stability": "stable"
