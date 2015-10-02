@@ -16,7 +16,7 @@ add to config/app.php
 Add the following to the config/filesystem.php
 ```bash
 'ovh' => [
-	'driver'   => 'runabove',
+	'driver'   => 'ovh',
 	'username' => 'yourUsername',
 	'password' => 'yourPassword',	  
 	'tenantId' => 'yourTeenantId',
