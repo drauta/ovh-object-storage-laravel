@@ -22,7 +22,6 @@ Add the following to the config/filesystem.php
 	'tenantId' => 'yourTeenantId',
 	'region'   => 'yourRegion',
 	'container'=> 'yourContainer',
-	'container_public_url' => 'yourContainerPublicUrl',
 ],
 ```
 Laravel
