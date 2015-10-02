@@ -10,7 +10,7 @@ composer require drauta/ovh-object-storage-laravel "dev-master"
 add to config/app.php
 
 ```bash
-'Drauta\Runabove\RunaboveServiceProvider',
+'Drauta\OvhObjectStorage\OvhServiceProvider',
 ```
 
 Add the following to the config/filesystem.php
