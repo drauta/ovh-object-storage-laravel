@@ -1,16 +1,16 @@
-<?php namespace Drauta\Runabove;
+<?php namespace Drauta\OvhObjectStorage;
 
 use Storage;
 use Illuminate\Support\ServiceProvider;
 
 //use Drauta\RunaboveClient;
 
-class RunaboveServiceProvider extends ServiceProvider {
+class OvhServiceProvider extends ServiceProvider {
 
 
 	public function boot()
   {
-        Storage::extend('runabove', function($app, $config)
+        Storage::extend('ovh', function($app, $config)
         {
             $client = new RunaboveClient($config);   
             return $client;
