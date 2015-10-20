@@ -3,7 +3,7 @@
 use Storage;
 use Illuminate\Support\ServiceProvider;
 
-//use Drauta\RunaboveClient;
+//use Drauta\OvhClient;
 
 class OvhServiceProvider extends ServiceProvider {
 
@@ -12,7 +12,7 @@ class OvhServiceProvider extends ServiceProvider {
   {
         Storage::extend('ovh', function($app, $config)
         {
-            $client = new RunaboveClient($config);   
+            $client = new OvhClient($config);   
             return $client;
         });
     }
