@@ -1,6 +1,5 @@
 <?php namespace Drauta\OvhObjectStorage;
 
-/*Dependencias*/
 use OpenCloud\OpenStack;
 use Guzzle\Http\Exception\BadResponseException;
 
@@ -8,23 +7,38 @@ use Guzzle\Http\Exception\BadResponseException;
 class OvhClient{
 	private $url = "https://auth.cloud.ovh.net/v2.0/";
 	private $client;
-	private $service;
+	private $region;
 	private $container;
+	private $container_name;
+	private $container_url;
+	
+	private function getContainer(){
+		if (!$this->container){
+			$this->container = $this->client->objectStoreService('swift', $this->region, 'publicURL')->getContainer($this->container_name);		
+		}
+		return $this->container;
+	}
+	
 	public function __construct($client){		
 		$this->client = new OpenStack($this->url, array(
 		  'username' => $client['username'],
 		  'password' => $client['password'],	  
 		  'tenantId' => $client['tenantId'],
 		));
-		/*Esto no se toca de momento*/
-		$this->service = $this->client->objectStoreService('swift', $client['region'], 'publicURL');		
-		$this->container = $this->service->getContainer($client['container']);
+		$this->region = $client['region'];
+		$this->container_name = $client['container'];
+		$this->container_url = $client['container_url'];
 	}
 
 	public function fileGet($filename)
-	{		
-		$object = $this->container->getObject($filename);
+	{	
+		$object = $this->getContainer()->getObject($filename);
 		return $object->getUrl();
+	}
+	
+	public function fileGetUrl($filename)
+	{		
+		return $this->container_url.'/'.$filename;
 	}
 	/*
 		File puede ser un file de un formulario o un path a un archivo existente
@@ -54,7 +68,7 @@ class OvhClient{
 	}
 	
 	public function fileExists($filename){	
-		foreach($this->container->objectList() as $obj){
+		foreach($this->getContainer()->objectList() as $obj){
 			if($obj->getName() == $filename){
 				return true;
 			}
@@ -63,12 +77,13 @@ class OvhClient{
 	}
 	
 	public function fileList(){
-		return $this->container->objectList();
+		return $this->getContainer()->objectList();
 	}
 	
 	public function fileDelete($filename){
-		$object = $this->container->getObject($filename);
+		$object = $this->getContainer()->getObject($filename);
 		return $object->delete();
 	}
 	/*Todo crear containers*/
 }
+
