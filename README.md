@@ -37,7 +37,13 @@ $filename not mandatory
 ```bash
 Storage::disk('ovh')->filePut($request->file('file'), $filename = null);
 ```
-Get the file url from container:
+Get the file url from config container public URL (for speed optimization, no call is made to OS api):
+
+```bash
+Storage::disk('ovh')->fileGetUrl($filename);
+```
+
+Get the file url from container (call to OS api, slower than fileGetUrl() ):
 
 ```bash
 Storage::disk('ovh')->fileGet($filename);
