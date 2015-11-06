@@ -1,5 +1,6 @@
 <?php namespace Drauta\OvhObjectStorage;
 
+/*Dependencias*/
 use OpenCloud\OpenStack;
 use Guzzle\Http\Exception\BadResponseException;
 
@@ -13,10 +14,11 @@ class OvhClient{
 	private $container_url;
 	
 	private function getContainer(){
-		if (!$this->container){
-			$this->container = $this->client->objectStoreService('swift', $this->region, 'publicURL')->getContainer($this->container_name);		
-		}
-		return $this->container;
+  	if (!$this->container){
+        $this->container = $this->client->objectStoreService('swift', $this->region, 'publicURL')->getContainer($this->container_name);		
+    }
+    
+    return $this->container;
 	}
 	
 	public function __construct($client){		
@@ -30,15 +32,18 @@ class OvhClient{
 		$this->container_url = $client['container_url'];
 	}
 
-	public function fileGet($filename)
-	{	
-		$object = $this->getContainer()->getObject($filename);
-		return $object->getUrl();
+	public function fileGet($filename, $break_cache = false)
+	{
+    $url = $this->getContainer()->getObject($filename)->getUrl();
+  	if ($break_cache) $url .= .'?'.time();
+		return $url;
 	}
 	
-	public function fileGetUrl($filename)
-	{		
-		return $this->container_url.'/'.$filename;
+	public function fileGetUrl($filename, $break_cache = false)
+	{	
+  	$url = $this->container_url.'/'.$filename;
+  	if ($break_cache) $url .= .'?'.time();
+		return $url;
 	}
 	/*
 		File puede ser un file de un formulario o un path a un archivo existente
@@ -86,4 +91,3 @@ class OvhClient{
 	}
 	/*Todo crear containers*/
 }
-
