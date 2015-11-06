@@ -64,7 +64,7 @@ class OvhClient{
 			}
 		}	
 		
-		$this->container->uploadObject($filename, fopen($getPath, 'r'));				
+		$this->getContainer()->uploadObject($filename, fopen($getPath, 'r'));				
 	}
 	
 	public function fileExists($filename){	
