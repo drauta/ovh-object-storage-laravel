@@ -35,14 +35,14 @@ class OvhClient{
 	public function fileGet($filename, $break_cache = false)
 	{
     $url = $this->getContainer()->getObject($filename)->getUrl();
-  	if ($break_cache) $url .= .'?'.time();
+  	if ($break_cache) $url .= '?'.time();
 		return $url;
 	}
 	
 	public function fileGetUrl($filename, $break_cache = false)
 	{	
   	$url = $this->container_url.'/'.$filename;
-  	if ($break_cache) $url .= .'?'.time();
+  	if ($break_cache) $url .= '?'.time();
 		return $url;
 	}
 	/*
