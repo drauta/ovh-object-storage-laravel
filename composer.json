@@ -6,12 +6,16 @@
     "authors": [
         {
             "name": "Oscar",
-            "email": "od@drauta.com"
+            "email": "od@about.me"
+        },
+        {
+        	"name": "Drauta",
+        	"email": "drauta@drauta.com"
         }
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.1.*",
+        "illuminate/support": "5.*.*",
         "rackspace/php-opencloud": "~1.14"
     },
     "autoload": {
