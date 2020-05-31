@@ -20,7 +20,7 @@ class OvhClient{
 	private function getContainer()
 	{
 	    if (!$this->container){
-		   $this->container = $this->client->objectStoreV1()->getContainer('tsaplus');	
+		   $this->container = $this->client->objectStoreV1()->getContainer($container_name);	
         }
         return $this->container;
 	}
