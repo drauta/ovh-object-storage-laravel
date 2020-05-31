@@ -4,6 +4,7 @@ Installation
 Install using composer:
 
 ```bash
+composer require php-opencloud/openstack
 composer require drauta/ovh-object-storage-laravel "dev-master"
 ```
 
