@@ -1,7 +1,6 @@
 <?php namespace Drauta\OvhObjectStorage;
 
 /*Dependencias*/
-//use OpenCloud\OpenStack;
 use OpenStack\OpenStack;
 use Guzzle\Http\Exception\BadResponseException;
 use OpenStack\ObjectStore\v1\Models\Container;
@@ -20,7 +19,7 @@ class OvhClient{
 	private function getContainer()
 	{
 	    if (!$this->container){
-		   $this->container = $this->client->objectStoreV1()->getContainer($container_name);	
+		   $this->container = $this->client->objectStoreV1()->getContainer($this->container_name);	
         }
         return $this->container;
 	}
@@ -45,7 +44,7 @@ class OvhClient{
         	'publicUrl' => $client['container_url'],
         ];
 
-
+        $this->container_name = $client['containerName'];
 		$this->client = new OpenStack($options);
 
 		$identity = $this->client->identityV3(['region' => $client['region']]);
@@ -136,3 +135,4 @@ class OvhClient{
 	}
 	/*Todo crear containers*/
 }
+
