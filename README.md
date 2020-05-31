@@ -4,7 +4,7 @@ Installation
 Install using composer:
 
 ```bash
-composer require php-opencloud/openstack
+composer require mpuig9406/ovh-object-storage-laravel "dev-master"
 ```
 
 add to config/app.php
