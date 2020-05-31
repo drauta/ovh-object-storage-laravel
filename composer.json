@@ -17,8 +17,12 @@
             "email": "cm@drauta.com"
         },
         {
-        	"name": "Drauta",
-        	"email": "drauta@drauta.com"
+            "name": "Drauta",
+            "email": "drauta@drauta.com"
+        },
+	{
+             "name": "Moises",
+             "email": "mpuig9406@gmail.com"
         }
     ],
     "require": {
