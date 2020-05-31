@@ -2,17 +2,18 @@
 
 use Storage;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Cache\Repository as CacheRepository;
 
 //use Drauta\OvhClient;
 
 class OvhServiceProvider extends ServiceProvider {
 
 
-  public function boot()
+  public function boot(CacheRepository $cache)
   {
-    Storage::extend('ovh', function($app, $config)
+    Storage::extend('ovh', function($app, $config) use ($cache)
     {
-      $client = new OvhClient($config);   
+      $client = new OvhClient($config, $cache);   
       return $client;
     });
   }
