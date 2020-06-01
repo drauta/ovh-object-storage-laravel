@@ -1,5 +1,5 @@
 {
-    "name": "mpuig9406/ovh-object-storage-laravel",
+    "name": "drauta/ovh-object-storage-laravel",
     "description": "Integration with Ovh object container",
 	"keywords": ["runabove", "laravel"],
 	"license": "MIT",
@@ -36,5 +36,4 @@
             "Drauta\\OvhObjectStorage": "src/"
         }
     },
-    "minimum-stability": "dev"
 }
