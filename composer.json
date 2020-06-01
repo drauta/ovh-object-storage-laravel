@@ -1,5 +1,5 @@
 {
-    "name": "mpuig9406/ovh-object-storage-laravel",
+    "name": "mpuig9406/ovh-object-storage-laravel" "1.0.0",
     "description": "Integration with Ovh object container",
 	"keywords": ["runabove", "laravel"],
 	"license": "MIT",
