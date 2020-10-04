@@ -17,13 +17,18 @@
             "email": "cm@drauta.com"
         },
         {
-        	"name": "Drauta",
-        	"email": "drauta@drauta.com"
+            "name": "Drauta",
+            "email": "drauta@drauta.com"
+        },
+	{
+             "name": "Moises",
+             "email": "mpuig9406@gmail.com"
         }
     ],
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "5.*.*",
+	"php-opencloud/openstack": "3.0.7",
         "rackspace/php-opencloud": "~1.14"
     },
     "autoload": {
@@ -31,5 +36,4 @@
             "Drauta\\OvhObjectStorage": "src/"
         }
     },
-    "minimum-stability": "stable"
 }
